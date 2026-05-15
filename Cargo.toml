@@ -6,4 +6,6 @@ edition = "2024"
 [dependencies]
 rand = "0.10.1"
 tch = "0.24.0"
+polars = { version = "0.53.0", features = ["lazy", "to_dummies", "ndarray"] }
+ndarray = "0.17"
 
