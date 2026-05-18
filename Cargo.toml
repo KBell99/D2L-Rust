@@ -8,4 +8,6 @@ rand = "0.10.1"
 tch = "0.24.0"
 polars = { version = "0.53.0", features = ["lazy", "to_dummies", "ndarray"] }
 ndarray = "0.17"
+plotters = "0.3.7"
+statrs = "0.18.0"
 

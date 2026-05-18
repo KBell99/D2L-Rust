@@ -47,6 +47,7 @@ fn main() {
     let sum = &X.sum(Kind::Float);
 
     sum.print();
+    // Move tensor to cuda
     //  2. Move it to CUDA
     // Using .to(Device::Cuda(0)) for a specific GPU
     // let cuda_tensor = cpu_tensor.to(Device::Cuda(0));

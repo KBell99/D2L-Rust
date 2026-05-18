@@ -3,7 +3,7 @@ use polars::prelude::*;
 use std::fs;
 
 fn main() {
-    // Reading DataSet
+    // 2.2.1 Reading the Dataset
     match fs::exists("data") {
         Ok(false) => fs::create_dir("data").unwrap(),
         Ok(true) => {}
@@ -32,7 +32,7 @@ NA,NA,140000",
 
     println!("{}", df);
 
-    // Data preparation: (https://docs.pola.rs/user-guide/migration/pandas/#key-syntax-differences)
+    // 2.2.2 Data preparation: (https://docs.pola.rs/user-guide/migration/pandas/#key-syntax-differences)
     // Split inputs (columns 0-1) and targets (column 2)
     // i.e. inputs, targets = data.iloc[:, 0:2], data.iloc[:, 2]
     let inputs = df
@@ -64,7 +64,7 @@ NA,NA,140000",
 
     println!("{}", inputs);
 
-    //Conversion to the Tensor Format
+    //2.2.3 Conversion to the Tensor Format
     let inputs_arr = inputs.to_ndarray::<Float64Type>(IndexOrder::C).unwrap();
     let inputs_tensor = ndarray_to_tensor(inputs_arr);
 
